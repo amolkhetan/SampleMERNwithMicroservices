@@ -118,6 +118,17 @@ This is achived by using polling:
 Groovy script is present in repo and console output is also attached as supporting doc to show it is auto triggered and uploading images to ecr.
 
 
+**Step 5: Infrastructure as Code (IaC) with Boto3**
+IaC.py file is added in repo to create VPC, subnets, security groups
+
+Below are few screenshots to showcase same:
+<img width="940" height="379" alt="image" src="https://github.com/user-attachments/assets/33a5815c-9c06-492c-86c7-9280a4dcd538" />
+<img width="940" height="499" alt="image" src="https://github.com/user-attachments/assets/12af1a48-97b5-4b96-b85b-7e6a7541050e" />
+<img width="940" height="505" alt="image" src="https://github.com/user-attachments/assets/c5cf194a-f7b4-4f1f-bfc5-8347b66d8e24" />
+
+
+
+
 
 
 
