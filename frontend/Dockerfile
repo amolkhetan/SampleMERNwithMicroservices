@@ -1,19 +1,18 @@
-# Use official Node.js LTS image
+# Use official Node.js image
 FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
-COPY package*.json ./
-RUN npm ci --only=production
+# Copy package files and install dependencies
+COPY frontend/package*.json ./
+RUN npm install
 
-# Copy source code
-COPY . .
-npm install
+# Copy the rest of the frontend source code
+COPY frontend/ ./
 
-# Expose port (adjust if needed)
+# Expose the development server port
 EXPOSE 3000
 
-# Start the frontend server
+# Start the frontend in development mode
 CMD ["npm", "start"]
