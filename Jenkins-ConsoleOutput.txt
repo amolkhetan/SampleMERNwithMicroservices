@@ -1,0 +1,278 @@
+Started by an SCM change
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/amol-ecr-cicd
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] git
+The recommended git tool is: NONE
+using credential github-creds
+ > /usr/bin/git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/amol-ecr-cicd/.git # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/amolkhetan/SampleMERNwithMicroservices # timeout=10
+Fetching upstream changes from https://github.com/amolkhetan/SampleMERNwithMicroservices
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+using GIT_ASKPASS to set credentials GitHub Token for accessing repo
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/amolkhetan/SampleMERNwithMicroservices +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision a15a4ea77af255d95c62be131f4bea81508f3244 (refs/remotes/origin/main)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f a15a4ea77af255d95c62be131f4bea81508f3244 # timeout=10
+ > /usr/bin/git branch -a -v --no-abbrev # timeout=10
+ > /usr/bin/git branch -D main # timeout=10
+ > /usr/bin/git checkout -b main a15a4ea77af255d95c62be131f4bea81508f3244 # timeout=10
+Commit message: "Update Dockerfile"
+ > /usr/bin/git rev-list --no-walk dd75a3d43089fcd6d19380b75ba8e59c4ef9fb63 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Login to ECR)
+[Pipeline] sh
++ docker login --username AWS --password-stdin 975050024946.dkr.ecr.us-west-2.amazonaws.com
++ aws ecr get-login-password --region us-west-2
+WARNING! Your password will be stored unencrypted in /var/lib/jenkins/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+
+Login Succeeded
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build & Push hello)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker build -t helloservice:1.0 ./backend/helloService
+failed to fetch metadata: fork/exec /var/lib/jenkins/.docker/cli-plugins/docker-buildx: exec format error
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  43.01kB
+Step 1/7 : FROM node:18
+ ---> b50082bc3670
+Step 2/7 : WORKDIR /app
+ ---> Using cache
+ ---> 4ad1a8e773e1
+Step 3/7 : COPY package*.json ./
+ ---> Using cache
+ ---> 33de6b3b0de9
+Step 4/7 : RUN npm install
+ ---> Using cache
+ ---> 9cce8daf064e
+Step 5/7 : COPY . .
+ ---> Using cache
+ ---> c42c12581166
+Step 6/7 : EXPOSE 3001
+ ---> Using cache
+ ---> 9842fbf78047
+Step 7/7 : CMD ["node", "index.js"]
+ ---> Using cache
+ ---> 0464ee409d64
+Successfully built 0464ee409d64
+Successfully tagged helloservice:1.0
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] sh
++ docker tag helloservice:1.0 975050024946.dkr.ecr.us-west-2.amazonaws.com/helloservice:1.0
++ docker push 975050024946.dkr.ecr.us-west-2.amazonaws.com/helloservice:1.0
+The push refers to repository [975050024946.dkr.ecr.us-west-2.amazonaws.com/helloservice]
+457944059016: Preparing
+38669a15c54b: Preparing
+3ac60b6d2f63: Preparing
+6295883c2261: Preparing
+d2a991bcab4d: Preparing
+b624aa2d5ea2: Preparing
+d399c9dc306f: Preparing
+84f9fa179c1b: Preparing
+ce84ba212e49: Preparing
+e4dc8cd9ecc8: Preparing
+6428cc293366: Preparing
+2f7436e79a0b: Preparing
+d399c9dc306f: Waiting
+84f9fa179c1b: Waiting
+ce84ba212e49: Waiting
+e4dc8cd9ecc8: Waiting
+6428cc293366: Waiting
+2f7436e79a0b: Waiting
+b624aa2d5ea2: Waiting
+38669a15c54b: Layer already exists
+d2a991bcab4d: Layer already exists
+457944059016: Layer already exists
+3ac60b6d2f63: Layer already exists
+6295883c2261: Layer already exists
+b624aa2d5ea2: Layer already exists
+d399c9dc306f: Layer already exists
+84f9fa179c1b: Layer already exists
+ce84ba212e49: Layer already exists
+e4dc8cd9ecc8: Layer already exists
+6428cc293366: Layer already exists
+2f7436e79a0b: Layer already exists
+1.0: digest: sha256:3b36dcdb4c219590aafa0a0c608cac5204eb6d7b483c35bb067ed160264a033d size: 2839
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build & Push profile)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker build -t profileservice:1.0 ./backend/profileService
+failed to fetch metadata: fork/exec /var/lib/jenkins/.docker/cli-plugins/docker-buildx: exec format error
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  53.25kB
+Step 1/7 : FROM node:18
+ ---> b50082bc3670
+Step 2/7 : WORKDIR /app
+ ---> Using cache
+ ---> 4ad1a8e773e1
+Step 3/7 : COPY package*.json ./
+ ---> Using cache
+ ---> 2918826e2c0d
+Step 4/7 : RUN npm install
+ ---> Using cache
+ ---> 6830ff8c1c11
+Step 5/7 : COPY . .
+ ---> Using cache
+ ---> 0a6df7030a20
+Step 6/7 : EXPOSE 3002
+ ---> Using cache
+ ---> 97ee725fbf20
+Step 7/7 : CMD ["node", "index.js"]
+ ---> Using cache
+ ---> 7867a95d7642
+Successfully built 7867a95d7642
+Successfully tagged profileservice:1.0
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] sh
++ docker tag profileservice:1.0 975050024946.dkr.ecr.us-west-2.amazonaws.com/profileservice:1.0
++ docker push 975050024946.dkr.ecr.us-west-2.amazonaws.com/profileservice:1.0
+The push refers to repository [975050024946.dkr.ecr.us-west-2.amazonaws.com/profileservice]
+c6acb1d49b88: Preparing
+8a27e2154674: Preparing
+1dc497400885: Preparing
+6295883c2261: Preparing
+d2a991bcab4d: Preparing
+b624aa2d5ea2: Preparing
+d399c9dc306f: Preparing
+84f9fa179c1b: Preparing
+ce84ba212e49: Preparing
+e4dc8cd9ecc8: Preparing
+6428cc293366: Preparing
+2f7436e79a0b: Preparing
+b624aa2d5ea2: Waiting
+d399c9dc306f: Waiting
+84f9fa179c1b: Waiting
+ce84ba212e49: Waiting
+e4dc8cd9ecc8: Waiting
+6428cc293366: Waiting
+2f7436e79a0b: Waiting
+d2a991bcab4d: Layer already exists
+c6acb1d49b88: Layer already exists
+1dc497400885: Layer already exists
+6295883c2261: Layer already exists
+8a27e2154674: Layer already exists
+b624aa2d5ea2: Layer already exists
+ce84ba212e49: Layer already exists
+d399c9dc306f: Layer already exists
+84f9fa179c1b: Layer already exists
+e4dc8cd9ecc8: Layer already exists
+2f7436e79a0b: Layer already exists
+6428cc293366: Layer already exists
+1.0: digest: sha256:f951476e205b8a71d9610b4f43355931af7883d920897b053fadc31bd09bb288 size: 2839
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build & Push frontend)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker build -t frontend:1.0 ./frontend
+failed to fetch metadata: fork/exec /var/lib/jenkins/.docker/cli-plugins/docker-buildx: exec format error
+
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  753.2kB
+Step 1/7 : FROM node:18-alpine
+ ---> ee77c6cd7c18
+Step 2/7 : WORKDIR /app
+ ---> Using cache
+ ---> 514b98cba9c4
+Step 3/7 : COPY package*.json ./
+ ---> Using cache
+ ---> b4d53bccc8ed
+Step 4/7 : RUN npm install
+ ---> Using cache
+ ---> 33cb039c0b60
+Step 5/7 : COPY . .
+ ---> 6ea0e0d2f6b9
+Step 6/7 : EXPOSE 3005
+ ---> Running in 866fea3a40ec
+ ---> Removed intermediate container 866fea3a40ec
+ ---> e147a828fb85
+Step 7/7 : CMD ["npm", "start"]
+ ---> Running in cf99c0be6585
+ ---> Removed intermediate container cf99c0be6585
+ ---> 3360f13f57a6
+Successfully built 3360f13f57a6
+Successfully tagged frontend:1.0
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] sh
++ docker tag frontend:1.0 975050024946.dkr.ecr.us-west-2.amazonaws.com/frontend:1.0
++ docker push 975050024946.dkr.ecr.us-west-2.amazonaws.com/frontend:1.0
+The push refers to repository [975050024946.dkr.ecr.us-west-2.amazonaws.com/frontend]
+33a253581f66: Preparing
+727f65cfaeb0: Preparing
+4a2e5f8d9876: Preparing
+706ef0ec6cde: Preparing
+82140d9a70a7: Preparing
+f3b40b0cdb1c: Preparing
+0b1f26057bd0: Preparing
+08000c18d16d: Preparing
+f3b40b0cdb1c: Waiting
+0b1f26057bd0: Waiting
+08000c18d16d: Waiting
+727f65cfaeb0: Layer already exists
+4a2e5f8d9876: Layer already exists
+706ef0ec6cde: Layer already exists
+82140d9a70a7: Layer already exists
+f3b40b0cdb1c: Layer already exists
+0b1f26057bd0: Layer already exists
+08000c18d16d: Layer already exists
+33a253581f66: Pushed
+1.0: digest: sha256:911798788f2e4a97e72b21ed56a43c863ed20d6d40cc20fa6d48a464193ec26b size: 1997
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
