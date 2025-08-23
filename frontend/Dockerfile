@@ -5,11 +5,12 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copy package files and install dependencies
-COPY frontend/package*.json ./
+COPY package*.json ./
+
 RUN npm install
 
 # Copy the rest of the frontend source code
-COPY frontend/ ./
+COPY . .
 
 # Expose the development server port
 EXPOSE 3000
