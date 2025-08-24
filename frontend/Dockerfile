@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Expose the development server port
-EXPOSE 3005
+EXPOSE 3000
 
 # Start the frontend in development mode
 CMD ["npm", "start"]
