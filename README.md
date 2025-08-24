@@ -122,20 +122,30 @@ Groovy script is present in repo and console output is also attached as supporti
 IaC.py file is added in repo to create VPC, subnets, security groups
 
 Below are few screenshots to showcase same:
-<img width="940" height="379" alt="image" src="https://github.com/user-attachments/assets/33a5815c-9c06-492c-86c7-9280a4dcd538" />
-<img width="940" height="499" alt="image" src="https://github.com/user-attachments/assets/12af1a48-97b5-4b96-b85b-7e6a7541050e" />
-<img width="940" height="505" alt="image" src="https://github.com/user-attachments/assets/c5cf194a-f7b4-4f1f-bfc5-8347b66d8e24" />
+<img width="940" height="321" alt="image" src="https://github.com/user-attachments/assets/9a9caafe-14a6-44b8-b482-58c5f04d6d9b" />
+<img width="940" height="501" alt="image" src="https://github.com/user-attachments/assets/6fa603eb-ccd0-4fc8-a3b0-e95943f4550f" />
+<img width="940" height="447" alt="image" src="https://github.com/user-attachments/assets/05f716cc-2d9d-482f-b0b4-98f349d057e9" />
+<img width="940" height="500" alt="image" src="https://github.com/user-attachments/assets/dd277d93-38fe-48c0-8774-537821ba0053" />
+
 
 **Step 6: Deploying Backend Services**
 DeployBackend.py is added in repo for backend deployment using boto3 
 
-<img width="940" height="327" alt="image" src="https://github.com/user-attachments/assets/4153a781-97a7-4850-951c-87049b781271" />
-<img width="940" height="327" alt="image" src="https://github.com/user-attachments/assets/18efa89b-ef3c-4dc7-9fff-37fbff790192" />
-<img width="940" height="481" alt="image" src="https://github.com/user-attachments/assets/0f0fe4d0-536a-4d43-bd07-77036174f755" />
-<img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/94e8a7e0-6664-45f6-b1cc-fdcce18aa26f" />
-<img width="940" height="501" alt="image" src="https://github.com/user-attachments/assets/1b402f6b-cb35-43e2-adce-9ca28b538967" />
+<img width="1473" height="483" alt="image" src="https://github.com/user-attachments/assets/ed00319a-4748-46b8-9e96-d6160a859a86" />
+<img width="1908" height="961" alt="image" src="https://github.com/user-attachments/assets/fb166598-340f-4afe-bbbc-a07a1de1579d" />
+<img width="1907" height="944" alt="image" src="https://github.com/user-attachments/assets/738bf9d3-af42-4124-9fab-56fba8e9ff68" />
+<img width="1915" height="269" alt="image" src="https://github.com/user-attachments/assets/494fc632-2457-4a3c-84e8-24971e1837ee" />
 
 **Step 7: Set Up Networking**
+Target group and ALB created
+<img width="940" height="460" alt="image" src="https://github.com/user-attachments/assets/e9ecdc2e-b171-4060-b592-7c45032f8174" />
+<img width="940" height="486" alt="image" src="https://github.com/user-attachments/assets/4aefb465-21c7-48d8-8f4e-3b57f69b27a9" />
+<img width="940" height="402" alt="image" src="https://github.com/user-attachments/assets/17a8af2d-fa37-46e4-961f-46f0d3fced66" />
+
+**Step 8: Deploying Frontend Services**
+Docker Run command was added in user data already along with backend.
+
+**Step 9: AWS Lambda Deployment**
 
 
 
