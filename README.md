@@ -126,6 +126,20 @@ Below are few screenshots to showcase same:
 <img width="940" height="499" alt="image" src="https://github.com/user-attachments/assets/12af1a48-97b5-4b96-b85b-7e6a7541050e" />
 <img width="940" height="505" alt="image" src="https://github.com/user-attachments/assets/c5cf194a-f7b4-4f1f-bfc5-8347b66d8e24" />
 
+**Step 6: Deploying Backend Services**
+DeployBackend.py is added in repo for backend deployment using boto3 
+
+<img width="940" height="327" alt="image" src="https://github.com/user-attachments/assets/4153a781-97a7-4850-951c-87049b781271" />
+<img width="940" height="327" alt="image" src="https://github.com/user-attachments/assets/18efa89b-ef3c-4dc7-9fff-37fbff790192" />
+<img width="940" height="481" alt="image" src="https://github.com/user-attachments/assets/0f0fe4d0-536a-4d43-bd07-77036174f755" />
+<img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/94e8a7e0-6664-45f6-b1cc-fdcce18aa26f" />
+<img width="940" height="501" alt="image" src="https://github.com/user-attachments/assets/1b402f6b-cb35-43e2-adce-9ca28b538967" />
+
+**Step 7: Set Up Networking**
+
+
+
+
 
 
 
