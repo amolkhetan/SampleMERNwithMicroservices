@@ -148,6 +148,7 @@ Docker Run command was added in user data already along with backend.
 **Step 9: AWS Lambda Deployment**
 IAM role created using iamrole.py to have s3 and cloud watch access
 Lambda Function created using create_lambda.py
+backup_lambda.zip was created using "Compress-Archive -Path .\backup_lambda.py -DestinationPath .\backup_lambda.zip -Force"
 
 <img width="1918" height="944" alt="image" src="https://github.com/user-attachments/assets/163fca91-aa30-45ac-9099-9ff7f338c27d" />
 
