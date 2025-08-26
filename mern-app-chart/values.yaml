@@ -1,0 +1,17 @@
+mernapp:
+  image: 975050024946.dkr.ecr.us-west-2.amazonaws.com/frontend:2.0
+  port: 3000
+  replicas: 2
+
+helloservice:
+  image: 975050024946.dkr.ecr.us-west-2.amazonaws.com/helloservice:2.0
+  port: 3001
+  replicas: 2
+
+profileservice:
+  image: 975050024946.dkr.ecr.us-west-2.amazonaws.com/profileservice:2.0
+  port: 3002
+  replicas: 2
+
+mongodb:
+  uri: "mongodb+srv://amolkhetan:fhcj60zmtKUsdXcZ@amol-cluster.smlmwf1.mongodb.net/"

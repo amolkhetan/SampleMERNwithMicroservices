@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloservice
+spec:
+  replicas: {{ .Values.helloservice.replicas }}
+  selector:
+    matchLabels:
+      app: helloservice
+  template:
+    metadata:
+      labels:
+        app: helloservice
+    spec:
+      containers:
+        - name: helloservice
+          image: {{ .Values.helloservice.image }}
+          ports:
+            - containerPort: {{ .Values.helloservice.port }}

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mernapp
+spec:
+  replicas: {{ .Values.mernapp.replicas }}
+  selector:
+    matchLabels:
+      app: mernapp
+  template:
+    metadata:
+      labels:
+        app: mernapp
+    spec:
+      containers:
+        - name: mernapp
+          image: {{ .Values.mernapp.image }}
+          ports:
+            - containerPort: {{ .Values.mernapp.port }}
+          # env:
+          #   - name: REACT_APP_HELLO_API
+          #     value: http://helloservice:{{ .Values.helloservice.port }}
+          #   - name: REACT_APP_PROFILE_API
+          #     value: http://profileservice:{{ .Values.profileservice.port }}

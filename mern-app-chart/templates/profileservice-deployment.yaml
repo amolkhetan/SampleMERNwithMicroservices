@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profileservice
+spec:
+  replicas: {{ .Values.profileservice.replicas }}
+  selector:
+    matchLabels:
+      app: profileservice
+  template:
+    metadata:
+      labels:
+        app: profileservice
+    spec:
+      containers:
+        - name: profileservice
+          image: {{ .Values.profileservice.image }}
+          ports:
+            - containerPort: {{ .Values.profileservice.port }}
+          env:
+            - name: MONGO_URI
+              value: "{{ .Values.mongodb.uri }}"
+          
