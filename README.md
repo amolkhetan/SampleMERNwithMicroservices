@@ -152,6 +152,26 @@ backup_lambda.zip was created using "Compress-Archive -Path .\backup_lambda.py -
 
 <img width="1918" height="944" alt="image" src="https://github.com/user-attachments/assets/163fca91-aa30-45ac-9099-9ff7f338c27d" />
 
+**Step 10: Kubernetes (EKS) Deployment**
+
+EKS cluster creating using "eksctl create cluster --name aws-amk-eks --region us-west-2 --nodegroup-name standard-workers --node-type t3.medium --nodes 2 --nodes-min 1 --nodes-max 3"
+
+<img width="940" height="476" alt="image" src="https://github.com/user-attachments/assets/ee3fb8e3-c665-4ea6-acbe-bf391169295d" />
+
+Helm chart is created using "helm create mern-app-chart"
+<img width="940" height="210" alt="image" src="https://github.com/user-attachments/assets/d0ef97b3-20cd-464f-832d-30c46ff37305" />
+
+Once all deployment and services files are created, Packaging is also done:
+<img width="940" height="96" alt="image" src="https://github.com/user-attachments/assets/5fa14c11-2a04-4dd6-895c-d8ebae2ab82a" />
+
+Used Helm Install for installation:
+<img width="940" height="211" alt="image" src="https://github.com/user-attachments/assets/948554af-23e9-498b-8a2c-f07277e33a38" />
+Type LoadBalancer is used for frontend sothat it can be accessedfrom outside or else do port-forward.
+<img width="1489" height="365" alt="image" src="https://github.com/user-attachments/assets/bbe2077c-c717-48fc-b779-2e74abe30866" />
+
+<img width="1915" height="332" alt="image" src="https://github.com/user-attachments/assets/4161f0bc-7bd9-4a39-b316-933bdd46f0a3" />
+
+
 
 
 
