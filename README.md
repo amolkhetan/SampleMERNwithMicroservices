@@ -165,13 +165,40 @@ Once all deployment and services files are created, Packaging is also done:
 <img width="940" height="96" alt="image" src="https://github.com/user-attachments/assets/5fa14c11-2a04-4dd6-895c-d8ebae2ab82a" />
 
 Used Helm Install for installation:
-<img width="940" height="211" alt="image" src="https://github.com/user-attachments/assets/948554af-23e9-498b-8a2c-f07277e33a38" />
-Type LoadBalancer is used for frontend sothat it can be accessedfrom outside or else do port-forward.
-<img width="1489" height="365" alt="image" src="https://github.com/user-attachments/assets/bbe2077c-c717-48fc-b779-2e74abe30866" />
+<img width="940" height="136" alt="image" src="https://github.com/user-attachments/assets/e658c080-0672-4011-aacf-7ca9337fdc52" />
+<img width="940" height="236" alt="image" src="https://github.com/user-attachments/assets/4f1fc933-b451-4f09-9e2b-323c25296145" />
 
-<img width="1915" height="332" alt="image" src="https://github.com/user-attachments/assets/4161f0bc-7bd9-4a39-b316-933bdd46f0a3" />
+Hello service is up
+<img width="940" height="104" alt="image" src="https://github.com/user-attachments/assets/b5250cf2-8179-48ec-a1ae-d0af3430758c" />
+Frontend is up
+<img width="940" height="142" alt="image" src="https://github.com/user-attachments/assets/5af06bca-ee1a-40a7-a4c1-deef3ed70794" />
+(Note for soem reason Hello is not coming on ui even if service is up)
 
 
+**Step 11: Monitoring and Logging**
+
+Added CloudWatch Add On from console
+<img width="1917" height="1037" alt="image" src="https://github.com/user-attachments/assets/8f83807c-23e1-488f-a17f-9b7064872559" />
+<img width="1919" height="861" alt="image" src="https://github.com/user-attachments/assets/0f30e813-9d21-4af0-bb48-03605a2fdaba" />
+
+Looks like to configure Cloudwatch, need IAM role with Web Identity trust and it is not allowed for my role. 
+Tried various option but not allowing to configure.
+
+<img width="1909" height="837" alt="image" src="https://github.com/user-attachments/assets/4a9a91da-180d-4cc3-acb2-e0799ff165b1" />
+
+**Step 12: Documentation**
+Steps already covered above for deployment.
+
+
+**Step 13: Final Checks**
+
+<img width="1917" height="306" alt="image" src="https://github.com/user-attachments/assets/a944c627-a530-4f25-a024-a979eb24fbe6" />
+
+**Step 14: ChatOps Integration**
+SNS
+<img width="1499" height="204" alt="image" src="https://github.com/user-attachments/assets/8ace6df3-f424-469c-bea8-f5ff9ec58db4" />
+
+<img width="1486" height="223" alt="image" src="https://github.com/user-attachments/assets/f9a81ea9-1c01-49bd-877c-b908a47d9c9e" />
 
 
 
