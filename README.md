@@ -1,4 +1,22 @@
 # Sample MERN with Microservices
+It is simple node app having 2 backend and 1 front end. Uses Mongo DB as database.
+
+###     Tech Stack  
+ <div align="center">
+   <img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo"  />
+   <img width="12" />
+   <img src="https://skillicons.dev/icons?i=kubernetes" height="40" alt="kubernetes logo"  />
+   <img width="12" />
+   <img src="https://cdn.simpleicons.org/docker/2496ED" height="40" alt="docker logo"  />
+   <img width="12" />
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" alt="linux logo"  />
+   <img width="12" />
+   <img src="https://skillicons.dev/icons?i=jenkins" height="40" alt="jenkins logo"  />
+   <img width="12" />
+   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="git logo"  />
+   <img width="12" />
+   <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo"  />
+ </div>
 
 
 **Step By Step Execution**
